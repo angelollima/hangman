@@ -6,29 +6,29 @@ using namespace std;
 class Hangman {
   public:
     string wrongGuess;
-    bool wrongGuessActivated = false;
     char guess;
+    bool wrongGuessActivated = false;
     int i, turns, attempts;
-    void clearWindow();
     string getWord();
-    int getLenWord();
-    void setLenWord(int len);
     string getStringHangman();
-    void getUserHangman();
-    void setHangmanSize();
-    void setHangman(char charc);
-    int getTurns();
-    void setTurns();
-    void setUserWord();
     char getGuess();
-    void verifyGuess(char guess);
+    int getLenWord();
+    int getTurns();
+    void clearWindow();
     void isActivated();
     void game();
+    void getUserHangman();
+    void setUserWord();
+    void verifyGuess(char guess);
 
   private:
     string word;
-    int lenWord;
     char *hangman;
+    int lenWord;
+    void setHangman(char charc);
+    void setHangmanSize();
+    void setLenWord(int len);
+    void setTurns();
 };
 
 void Hangman::clearWindow() {
@@ -83,7 +83,7 @@ int Hangman::getTurns() {
 }
 
 void Hangman::setTurns() {
-  turns = getLenWord() + 3;
+  turns = getLenWord() + 2;
 }
 
 
