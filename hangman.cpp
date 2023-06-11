@@ -86,7 +86,6 @@ void Hangman::setTurns() {
   turns = getLenWord() + 2;
 }
 
-
 void Hangman::setUserWord() {
   cout << "Inform a word: ";
   cin >> word;
@@ -133,11 +132,13 @@ void Hangman::isActivated() {
 
 void Hangman::game() {
   cout << "The word has " << getLenWord() << " letters" << '\n';
+  cout << '\n';
   getUserHangman();
   if (!wrongGuessActivated) {
     cout << '\n';
   }
   isActivated();
+  cout << '\n';
   cout << "You have " << turns << " chances left!" << '\n';
   cout << "Take a guess: "; cin >> guess;
   clearWindow();
@@ -148,14 +149,13 @@ void Hangman::game() {
 int main() {
   Hangman game;
 
-  int turns;
   string hangman, word;
+  char response;
+  int turns;
 
   game.clearWindow();
   cout << "Inform 0 to exit the game!" << "\n\n";
   game.setUserWord();
-
-  //cout << turns << hangman << word;
 
   do {
     turns = game.getTurns();
